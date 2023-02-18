@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scrabblescapes</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script>
+        function showItem(event) {
+            alert(event.target.innerHTML);
+        }
+        function addToList(word) {
+            document.getElementById("listOfWord").innerHTML += "<li class='list-group-item' onclick='showItem(event)'>" + word + "</li>";
+        }
+        function checkPress() {
+            var f = document.getElementById("txtWord").value;
+            if (f == "SHAKY") {
+                addToList(f);
+                clearPress();
+            } else if (f == "ASHY") {
+                addToList(f);
+                clearPress();
+            } else if (f == "YAKS") {
+                addToList(f);
+                clearPress();
+            } else if (f == "ASH") {
+                addToList(f);
+                clearPress();
+            } else if (f == "ASK") {
+                addToList(f);
+                clearPress();
+            } else if (f == "HAS") {
+                addToList(f);
+                clearPress();
+            } else if (f == "HAY") {
+                addToList(f);
+                clearPress();
+            } else if (f == "SAY") {
+                addToList(f);
+                clearPress();
+            } else if (f == "SHY") {
+                addToList(f);
+                clearPress();
+            } else if (f == "SKA") {
+                addToList(f);
+                clearPress();
+            } else if (f == "SKY") {
+                addToList(f);
+                clearPress();
+            } else if (f == "YAK") {
+                addToList(f);
+                clearPress();
+            } else {
+                clearPress();
+            }
+        }
+        function backSpace() {
+            var f = document.getElementById("txtWord").value;
+            var g = f.charAt(f.length - 1);
+            document.getElementById("txtWord").value = f.substring(0, f.length - 1);
+            if (g == "H") {
+                document.getElementById("letterH").disabled = false;
+                var g = "";
+            } else if (g == "Y") {
+                document.getElementById("letterY").disabled = false;
+                var g = "";
+            } else if (g == "A") {
+                document.getElementById("letterA").disabled = false;
+                var g = "";
+            } else if (g == "K") {
+                document.getElementById("letterK").disabled = false;
+                var g = "";
+            }  else {
+                document.getElementById("letterS").disabled = false;
+                var g = "";
+            }
+        }
+        function clearPress() {
+            var f = document.getElementById("txtWord").value;
+            document.getElementById("txtWord").value = "";
+            document.getElementById("letterH").disabled = false;
+            document.getElementById("letterY").disabled = false;
+            document.getElementById("letterA").disabled = false;
+            document.getElementById("letterK").disabled = false;
+            document.getElementById("letterS").disabled = false;
+        }
+        function HFunc() {
+            document.getElementById("letterH").disabled = true;
+            var f = document.getElementById("txtWord").value;
+            document.getElementById("txtWord").value += "H";
+        }
+        function YFunc() {
+            document.getElementById("letterY").disabled = true;
+            var f = document.getElementById("txtWord").value;
+            document.getElementById("txtWord").value += "Y";
+        }
+        function AFunc() {
+            document.getElementById("letterA").disabled = true;
+            var f = document.getElementById("txtWord").value;
+            document.getElementById("txtWord").value += "A";
+        }
+        function KFunc() {
+            document.getElementById("letterK").disabled = true;
+            var f = document.getElementById("txtWord").value;
+            document.getElementById("txtWord").value += "K";
+        }
+        function SFunc() {
+            document.getElementById("letterS").disabled = true;
+            var f = document.getElementById("txtWord").value;
+            document.getElementById("txtWord").value += "S";
+        }
+    </script>
+    <style>
+        body {
+            max-width: 100%;
+            min-height: 100%;
+            background-image: url(photos/bg.png);
+            background-position: center center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    </style>
+</head>
+<body class="container py-5 px-5">
+    <h1 onclick="showItem(event)" class="mx-5">Scrabblescapes</h1>
+    <div class="card mx-5">
+        <div class="card-header">
+            <label class="form-label" for="txtWord">Find all the words these letters can make:</label>  
+            <div class="d-flex">
+                <div class="input-group">
+                    <input type="text" id="txtWord" class="form-control">
+                    <button type="button" class="btn btn-success me-2" onclick="checkPress()">Check</button>
+                </div>
+                <button type="button" class="btn btn-outline-danger me-2" onclick="backSpace()">Back</button>
+                <button type="button" class="btn btn-1 btn-danger" onclick="clearPress()">Clear</button>
+            </div>
+        </div>
+        <div class="card-footer d-flex justify-content-between">
+            <div>
+                <button id="letterH" type="button" class="btn btn-lg btn1 btn-primary my-1 me-1" onclick="HFunc()">H</button>                
+                <button id="letterY" type="button" class="btn btn-lg btn1 btn-primary my-1 me-1" onclick="YFunc()">Y</button>
+                <button id="letterA" type="button" class="btn btn-lg btn1 btn-primary my-1 me-1" onclick="AFunc()">A</button>
+                <button id="letterK" type="button" class="btn btn-lg btn1 btn-primary my-1 me-1" onclick="KFunc()">K</button>
+                <button id="letterS" type="button" class="btn btn-lg btn1 btn-primary my-1" onclick="SFunc()">S</button>
+            </div>
+        </div>
+    </div>
+    <ul id="listOfWord" class="list-group my-3 mx-5">
+
+    </ul>
+    <footer class="text-center">
+        <p class="small mt-4 mb-1">© 2023 Copyright: Scrabblescapes.co</p>
+        <p class="small">Background from <a href="https://www.pexels.com/photo/photo-of-snow-capped-mountains-during-dawn-2835436/">Pexels.com</a></p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+</body>
+</html>
