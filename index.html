@@ -76,32 +76,27 @@
             document.getElementById("txtWord").value += "S";
         }
         window.addEventListener("keydown", function(event) {
-            var v = document.getElementById("letterH");
-            if (event.key === "h" && !v.disabled) {
+            if (event.key === "h" && !document.getElementById("letterH").disabled) {
                 HFunc();
             }
         });
         window.addEventListener("keydown", function(event) {
-            var v = document.getElementById("letterY");
-            if (event.key === "y" && !v.disabled) {
+            if (event.key === "y" && !document.getElementById("letterY").disabled) {
                 YFunc();
             }
         });
         window.addEventListener("keydown", function(event) {
-            var v = document.getElementById("letterA");
-            if (event.key === "a" && !v.disabled) {
+            if (event.key === "a" && !document.getElementById("letterA").disabled) {
                 AFunc();
             }
         });
         window.addEventListener("keydown", function(event) {
-            var v = document.getElementById("letterK");
-            if (event.key === "k" && !v.disabled) {
+            if (event.key === "k" && !document.getElementById("letterK").disabled) {
                 KFunc();
             }
         });
         window.addEventListener("keydown", function(event) {
-            var v = document.getElementById("letterS");
-            if (event.key === "s" && !v.disabled) {
+            if (event.key === "s" && !document.getElementById("letterS").disabled) {
                 SFunc();
             }
         });
