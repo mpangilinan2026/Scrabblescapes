@@ -30,20 +30,16 @@
             document.getElementById("txtWord").value = f.substring(0, f.length - 1);
             if (g == "H") {
                 document.getElementById("letterH").disabled = false;
-                var g = "";
             } else if (g == "Y") {
                 document.getElementById("letterY").disabled = false;
-                var g = "";
             } else if (g == "A") {
                 document.getElementById("letterA").disabled = false;
-                var g = "";
             } else if (g == "K") {
                 document.getElementById("letterK").disabled = false;
-                var g = "";
             }  else {
                 document.getElementById("letterS").disabled = false;
-                var g = "";
             }
+            var g = "";
         }
         function clearPress() {
             var f = document.getElementById("txtWord").value;
@@ -79,6 +75,46 @@
             var f = document.getElementById("txtWord").value;
             document.getElementById("txtWord").value += "S";
         }
+        window.addEventListener("keydown", function(event) {
+            if (event.key === "h") {
+                HFunc();
+            }
+        });
+        window.addEventListener("keydown", function(event) {
+            if (event.key === "y") {
+                YFunc();
+            }
+        });
+        window.addEventListener("keydown", function(event) {
+            if (event.key === "a") {
+                AFunc();
+            }
+        });
+        window.addEventListener("keydown", function(event) {
+            if (event.key === "k") {
+                KFunc();
+            }
+        });
+        window.addEventListener("keydown", function(event) {
+            if (event.key === "s") {
+                SFunc();
+            }
+        });
+        window.addEventListener("keydown", function(event) {
+            if (event.key === "Enter") {
+                checkPress();
+            }
+        });
+        window.addEventListener("keydown", function(event) {
+            if (event.key === "Backspace") {
+                backSpace();
+            }
+        });
+        window.addEventListener("keydown", function(event) {
+            if (event.ctrlKey && event.key === "Backspace") {
+                clearPress();
+            }
+        });
     </script>
     <style>
         body {
